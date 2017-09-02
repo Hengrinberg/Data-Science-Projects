@@ -1,0 +1,166 @@
+
+<!DOCTYPY html>
+<html>
+<head>
+<meta charset="utf-8">
+<title> html exercise </title>
+
+
+
+
+</head>
+<body background ="http://webdrop.co.il/sites/default/files/isorepublic.jpg" >
+    <h1 align = "center" style="color:black">CUSTOMER PROFILE</h1>
+<h3 dir="ltr">name: </h3>
+
+<form name="details" method="get">
+<div>
+    <label for="First name" >First name:</label>
+    <input type="text" id="fname" name="firstName" placeholder="First name"  required><br>
+    <label for="Last name">Last name:</label>
+    <input type="text" id="Last name" name="lastName" placeholder="Last name" required><br>
+</div>
+
+<div>
+    <h3 dir="ltr">birthday: </h3>
+    <label for="year" required>year: </label>
+    <select id="year" name="year">
+    <option>1980</option>
+    <option>1981</option>
+    <option>1982</option>
+    <option>1983</option>
+    <option>1984</option>
+    <option>1985</option>
+    <option>1986</option>
+    <option>1987</option>
+    <option>1988</option>
+    <option>1989</option>
+    <option>1990</option>
+    <option>1991</option>
+    <option>1992</option>
+    <option>1993</option>
+    <option>1994</option>
+    <option>1995</option>
+    </select>
+    <label for="month" required>month: </label>
+    <select id="month" name="month">
+    <option>01</option>
+    <option>02</option>
+    <option>03</option>
+    <option>04</option>
+    <option>05</option>
+    <option>06</option>
+    <option>07</option>
+    <option>08</option>
+    <option>09</option>
+    <option>10</option>
+    <option>11</option>
+    <option>12</option>
+    </select>
+    <label for="day" required>day: </label>
+    <select id="day" name="day">
+    <option>01</option>
+    <option>02</option>
+    <option>03</option>
+    <option>04</option>
+    <option>05</option>
+    <option>06</option>
+    <option>07</option>
+    <option>08</option>
+    <option>09</option>
+    <option>10</option>
+    <option>11</option>
+    <option>12</option>
+    <option>13</option>
+    <option>14</option>
+    <option>15</option>
+    <option>16</option>
+    <option>17</option>
+    <option>18</option>
+    <option>19</option>
+    <option>20</option>
+    <option>21</option>
+    <option>22</option>
+    <option>23</option>
+    <option>24</option>
+    <option>25</option>
+    <option>26</option>
+    <option>27</option>
+    <option>28</option>
+    <option>29</option>
+    <option>30</option>3
+    <option>31</option>
+    </select>
+
+</div>
+<div>
+    <h3><label for="gender" >gender:</label></h3>
+    <input type="radio" name="gender">male<br>
+    <input type="radio" name="gender" required>female
+</div>
+<p><strong>Note:</strong>the data entered will be kept in the system for 12 months </p>
+<div>
+<input type="checkbox" id="1" >i filled all the empty tabs<br>
+<input type="checkbox" id="2" >i read the note<br>
+<input type="checkbox" id="3" >i agree to the Fabric Software and Services Agreement
+</div>
+<br>
+<button type="submit" onclick="validateNameFunc(document.details.firstName,document.details.lastName) ; checkBoxTest(document.getElementById('1').checked,document.getElementById('2').checked,document.getElementById('3').checked) ">submit</button>
+</form>
+
+<script>
+function validateNameFunc(entry1,entry2)
+{
+    var regex = /^[a-zA-Z ]+$/;
+
+    if (entry1.value.match(regex) && entry2.value.match(regex))
+    {
+    var hashFname= hashFunc(entry1);
+    var hashLname= hashFunc(entry2);
+    alert("your first name is:" + " " + hashFname + "and your last name is:" + " " + hashLname )
+    return true
+    }
+    else
+    {
+        alert("please input aplhabet characters only");
+        return false;
+    }
+}
+
+function checkBoxTest(confirm1,confirm2,confirm3)
+{
+
+  if ( confirm1 === true &&  confirm2 === true && confirm3 === true)
+  {
+        return true;
+  }
+  else
+  {
+        alert("please fill all the checkboxes");
+        return false;
+  }
+
+}
+
+
+function hashFunc(string)
+{
+   var hash= string.value
+   var chr, i=0, len=hash.length,out="";
+   for (; i<len ;i++ )
+   {
+       chr= hash.charCodeAt(i).toString(2);
+       {
+       out +=  chr;
+       }
+   }
+   return out
+}
+
+
+
+</script>
+
+</body>
+</html>
+tml>
